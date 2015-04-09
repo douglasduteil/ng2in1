@@ -1,0 +1,38 @@
+{
+    "ecmaFeatures": {
+        "arrowFunctions": true,
+        "blockBindings": true,
+        "classes": true,
+        "defaultParams": true,
+        "restParams": true,
+        "destructuring": true,
+        "modules": true,
+        "objectLiteralComputedProperties": true,
+        "objectLiteralShorthandMethods": true,
+        "objectLiteralShorthandProperties": true,
+        "spread": true,
+        "templateStrings": true
+    },
+    "env": {
+        "browser": true,
+        "jasmine": true
+    },
+    "rules": {
+        "brace-style": [1, "1tbs", { "allowSingleLine": true }],
+        "complexity": [1, 4],
+        "func-style": [2, "declaration"],
+        "no-console": 2,
+        "no-debugger": 2,
+        "no-multiple-empty-lines": [1],
+        "no-underscore-dangle": 0,
+        "no-use-before-define": 0,
+        "no-var": 2,
+        "quotes": [ 2, "single", "avoid-escape"],
+        "space-before-blocks": [1],
+        "space-before-function-paren": [1, {"anonymous": "always", "named": "never"}],
+        "space-before-function-parentheses": [1, {"anonymous": "always", "named": "never"}],
+        "space-in-brackets": [1, "never"],
+        "space-in-parens": [1],
+        "strict": 0
+    }
+}
