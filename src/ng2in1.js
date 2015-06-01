@@ -9,9 +9,13 @@ import {
   EmptyAnnotationProcessor
   } from './annotationProcessors';
 
-export function ng1xModule(FactoryAsModule, {dependencies = [], moduleSuffix = 'Module'} = {}) {
+export function ng1xModule(FactoryAsModule, {
+  dependencies = [],
+  moduleName = FactoryAsModule.name,
+  moduleSuffix = 'Module'
+} = {}) {
 
-  const moduleName = FactoryAsModule.name + moduleSuffix;
+  moduleName = moduleName + moduleSuffix;
 
   try {
 
@@ -40,12 +44,13 @@ export function ng1xModule(FactoryAsModule, {dependencies = [], moduleSuffix = '
     return Object.assign(directiveConfig,
       annotationProcessors
         .filter((processor) => processor.test(annotation))[0]
-        .process(annotation, FactoryAsModule)
+        .process(annotation, moduleName)
     );
   }, {});
 
   //
 
+  ngModule.controller(moduleName, FactoryAsModule);
   ngModule.directive(directiveConfig._directiveName, () => directiveConfig);
 
   ngModule._boostrapingSelector = directiveConfig.selector;

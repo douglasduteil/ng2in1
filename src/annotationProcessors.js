@@ -29,8 +29,8 @@ export class ComponentAnnotationProcessor {
     directiveConfig = componentConfigToDirectiveConfig(directiveConfig, this.opts);
     return {
       bindToController: true,
-      controller: DirectiveFn,
-      controllerAs: normalizeControllerAsName(DirectiveFn.name),
+      controller: moduleName,
+      controllerAs: normalizeControllerAsName(moduleName),
       scope: {},
       ...directiveConfig
     };
