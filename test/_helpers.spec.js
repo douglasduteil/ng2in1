@@ -1,3 +1,3 @@
 'use strict';
 
-chai.config.truncateThreshold = 2;
+window.chai.config.truncateThreshold = 2;
