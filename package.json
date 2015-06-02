@@ -1,6 +1,6 @@
 {
   "name": "ng2in1",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "ES6 household cleaner to clean hard grease Angular 1.x code off",
   "main": "index.js",
   "keywords": [
