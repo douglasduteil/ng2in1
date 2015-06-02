@@ -25,7 +25,7 @@ export class ComponentAnnotationProcessor {
 
   test(ann) { return ann instanceof Component; }
 
-  process(directiveConfig, DirectiveFn) {
+  process(directiveConfig, moduleName) {
     directiveConfig = componentConfigToDirectiveConfig(directiveConfig, this.opts);
     return {
       bindToController: true,
