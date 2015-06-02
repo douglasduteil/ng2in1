@@ -32,7 +32,7 @@ function inlineTransformer(inlineTemplate) {
 function directivesTransformer(directives, {ngModule}) {
   const directiveModulesName = _(directives)
     .filter(_.negate(_.isString))
-    .map(ng1xModule)
+    .map(componentFactory => ng1xModule(componentFactory))
     .map(m => m.name)
     .value();
 

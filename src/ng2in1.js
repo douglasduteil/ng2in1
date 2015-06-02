@@ -11,11 +11,11 @@ import {
 
 export function ng1xModule(FactoryAsModule, {
   dependencies = [],
-  moduleName = FactoryAsModule.name,
+  factoryName = FactoryAsModule.name,
   moduleSuffix = 'Module'
-} = {}) {
+} = FactoryAsModule.moduleAnnotation || {}) {
 
-  moduleName = moduleName + moduleSuffix;
+  const moduleName = factoryName + moduleSuffix;
 
   try {
 
@@ -44,13 +44,13 @@ export function ng1xModule(FactoryAsModule, {
     return Object.assign(directiveConfig,
       annotationProcessors
         .filter((processor) => processor.test(annotation))[0]
-        .process(annotation, moduleName)
+        .process(annotation, factoryName)
     );
   }, {});
 
   //
 
-  ngModule.controller(moduleName, FactoryAsModule);
+  ngModule.controller(factoryName, FactoryAsModule);
   ngModule.directive(directiveConfig._directiveName, () => directiveConfig);
 
   ngModule._boostrapingSelector = directiveConfig.selector;
